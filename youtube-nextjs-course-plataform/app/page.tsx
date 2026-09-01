@@ -2,8 +2,12 @@
 export default function PageHome() {
   return (
     
-      <main className='bg-[var(--color-background)]'>
+      <main>
         Home
+
+        <button className="button">
+          teste
+        </button>
       </main>
     
   );
