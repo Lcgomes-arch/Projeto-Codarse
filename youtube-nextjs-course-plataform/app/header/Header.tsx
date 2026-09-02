@@ -1,10 +1,17 @@
 'use client';
-
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MdMenu } from "react-icons/md";
 
 export const Header = () => {
+    const [title, setTitle] = useState('CodarSe');
     const currentPath = usePathname();
+
+    useEffect(() =>{
+
+        setTitle(document.title);
+
+    }, [currentPath]);
 
 
     return (
