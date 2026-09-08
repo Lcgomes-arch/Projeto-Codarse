@@ -14,9 +14,24 @@ export const Header = () => {
 
     }, [currentPath]);
 
+    useEffect(() => {
+        const handle = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setDrawer(false);
+            }
+
+        }
+        window.addEventListener('keydown', handle);
+
+        return () => {
+            window.removeEventListener('keydown', handle);
+        };
+    });
+
 
     return (
-        <nav className="flex items-center gap-6 justify-start  md:justify-center bg-primary text-white py-2 sm:py-4 px-6">
+        <>
+        <nav className="flex items-center gap-6 justify-start fixed top-0 right-0 left-0  md:justify-center bg-primary text-white py-2 sm:py-4 px-6">
             <button className='sm:hidden' onClick={() => setDrawer (true)}>
                 <MdMenu size={24} />
             </button>
@@ -67,6 +82,8 @@ export const Header = () => {
 
             <h1 className='sm:hidden'>{title}</h1>
         </nav>
+        <div className='h-14 sm:h-[72px]'/>
+        </>
             
     );
 };
