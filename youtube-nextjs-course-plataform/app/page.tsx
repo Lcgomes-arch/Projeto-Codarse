@@ -9,7 +9,10 @@ export default function PageHome() {
   return (
     
       <main>
-        <Section />
+        <Section 
+          variant= 'h-list'
+          title='Veja mais cursos'
+        />
       </main>
 
       
