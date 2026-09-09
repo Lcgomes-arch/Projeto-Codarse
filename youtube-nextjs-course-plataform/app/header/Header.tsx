@@ -26,7 +26,7 @@ export const Header = () => {
         return () => {
             window.removeEventListener('keydown', handle);
         };
-    });
+    }, []);
 
 
     return (
@@ -60,11 +60,13 @@ export const Header = () => {
                 <div data-open={drawer}
                 tabIndex={drawer ? undefined : -1}
                 onClick={() => setDrawer(false)}
-                 className= 'bg-gradient-to-r from-background fixed top-0 left-0 bottom-0 right-0 transition-transform data-[open=false]:-translate-x-full' >
-                    <ul className="flex gap-4 flex-col p-4 w-60 bg-background onClick={e => e.stopPropagation()}>">
+                 className= 'sm:hidden  bg-gradient-to-r from-background fixed top-0 left-0 bottom-0 right-0 transition-transform data-[open=false]:-translate-x-full' >
+                    <ul className="flex gap-4 flex-col p-4 w-60 bg-background" 
+                    onClick={e => e.stopPropagation()}>
                     
                     <li className=''>
-                        <a href="/" data-active={currentPath === '/'} className= 'data-[active=true]:underline'>
+                        <a href="/" data-active={currentPath === '/'} 
+                        className="data-[active=true]:underline">
                             Página Inicial
                         </a>
                     </li>
@@ -80,7 +82,7 @@ export const Header = () => {
                                 </ul>
                 </div>
 
-            <h1 className='sm:hidden'>{title}</h1>
+            <h1 className='sm:hidden line-clamp-1'>{title}</h1>
         </nav>
         <div className='h-14 sm:h-[72px]'/>
         </>
