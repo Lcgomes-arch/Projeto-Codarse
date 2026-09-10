@@ -1,3 +1,4 @@
+import { CourseHeader } from "@/app/header/course-header/CourseHeader";
 import { Metadata } from "next";
 
 interface Props {
@@ -18,7 +19,11 @@ export default function PageCoursesDetail({params}: Props) {
 
     return(
         <main className='mt-8 flex justify-center'>
-            Detalhe do curso {params.id}
+            <div className= ' w-full min-[880px]:max-w-[880px]'>
+               <CourseHeader 
+               
+               />
+            </div>
         </main>
     )
 }
