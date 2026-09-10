@@ -8,6 +8,7 @@
   --color-background: #000000;
   --color-primary-contrast: #ffffff;
   --color-primary-hover: #027c70;
+  --color-grounded: #282c2c;
 }
 
 html[light]{
@@ -19,6 +20,7 @@ html[light]{
     --color-background: #cacaca;
     --color-primary-contrast: #ffffff;
      --color-primary-hover: #027c70;
+     --color-grounded: #282c2c;
   
 }
 
@@ -33,4 +35,28 @@ body {
 
 a {
   @apply hover:underline;
+}
+
+.overflow-primary::-webkit-scrollbar-thumb{
+  @apply bg-grounded;
+}
+
+*::-webkit-scrollbar{
+  @apply h-3 w-2;
+}
+
+*::-webkit-scrollbar-button{
+  @apply hidden;
+}
+
+*::-webkit-scrollbar-corner{
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+  @apply rounded-full;
+}
+
+*::-webkit-scrollbar-track{
+  @apply bg-transparent;
 }
